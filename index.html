@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Official TBARC India certificate and document verification portal.">
+<meta name="description" content="Official TBARC India document verification portal.">
 <meta name="theme-color" content="#075333">
-<title>Certificate & Document Verification | TBARC India</title>
+<title>Document Verification | TBARC India</title>
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,32 +13,31 @@
 <style>
 :root{--green:#075333;--dark:#043b25;--light:#f0f6ef;--text:#202923;--muted:#626a63;--border:#e4ebe4;--shadow:0 14px 38px rgba(4,59,37,.09)}
 *{box-sizing:border-box}body{margin:0;font-family:"DM Sans",sans-serif;color:var(--text);background:#fff;line-height:1.7;min-height:100vh;display:flex;flex-direction:column}
-a{color:inherit}.site-header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--border);z-index:5}.nav{max-width:1180px;margin:auto;padding:12px 22px;display:flex;justify-content:space-between;align-items:center}.brand{font:800 18px Manrope,sans-serif;color:var(--green);text-decoration:none;letter-spacing:-.5px}.brand small{display:block;font:700 9px "DM Sans";letter-spacing:1.5px;color:#63766a}.nav a.admin{font-size:12px;font-weight:800;color:var(--green);text-decoration:none;border:1px solid #d7e5d9;border-radius:7px;padding:8px 13px}
+a{color:inherit}.site-header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--border);z-index:5}.nav{max-width:1180px;margin:auto;padding:12px 22px;display:flex;justify-content:space-between;align-items:center}.brand{display:flex;align-items:center;gap:11px;font:800 18px Manrope,sans-serif;color:var(--green);text-decoration:none;letter-spacing:-.5px}.brand img{width:46px;height:46px;object-fit:contain}.brand small{display:block;font:700 9px "DM Sans";letter-spacing:1.5px;color:#63766a}.nav a.admin{font-size:12px;font-weight:800;color:var(--green);text-decoration:none;border:1px solid #d7e5d9;border-radius:7px;padding:8px 13px}
 .hero{color:white;background:linear-gradient(90deg,rgba(1,35,20,.95),rgba(3,62,35,.78)),url('images/hero.jpg') center/cover no-repeat}.hero-inner{max-width:1120px;margin:auto;padding:68px 24px 82px}.kicker{display:inline-block;padding:6px 13px;border:1px solid #ffffff55;border-radius:30px;font-size:10px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase}.hero h1{font:800 clamp(34px,5vw,55px)/1.12 Manrope,sans-serif;margin:18px 0 12px;letter-spacing:-1.4px}.hero h1 span{color:#d9e9d8}.hero p{max-width:680px;color:#e0ece2;margin:0;font-size:15px}
 main{flex:1}.wrap{max-width:850px;margin:-30px auto 0;padding:0 20px 70px;position:relative}.card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:clamp(22px,4vw,36px);box-shadow:var(--shadow)}.heading{text-align:center;margin-bottom:25px}.icon{width:52px;height:52px;margin:auto auto 12px;display:grid;place-items:center;border-radius:14px;background:var(--light);color:var(--green);font-size:24px}.heading h2{font:800 27px Manrope,sans-serif;color:var(--dark);margin:0 0 5px}.heading p{font-size:13px;color:var(--muted);margin:0}
-.tabs{display:flex;gap:8px;margin:0 auto 22px;max-width:460px;background:#f2f6f2;padding:5px;border-radius:9px}.tab{flex:1;border:0;background:transparent;padding:11px 8px;border-radius:7px;color:#52635a;font:800 12px "DM Sans";cursor:pointer}.tab.active{background:var(--green);color:#fff;box-shadow:0 2px 7px #07533322}
+
 label{display:block;font-size:13px;font-weight:800;color:var(--dark);margin-bottom:8px}.input-row{display:flex;gap:10px}input{width:100%;min-width:0;padding:14px 15px;border:1px solid #d8e1db;border-radius:8px;font:600 15px "DM Sans";outline:none;text-transform:uppercase}input:focus{border-color:var(--green);box-shadow:0 0 0 3px #07533314}input::placeholder{text-transform:none;color:#9aa69d;font-weight:400}.btn{border:0;border-radius:8px;background:var(--green);color:white;padding:0 22px;font:800 13px Manrope;cursor:pointer;min-height:49px;white-space:nowrap}.btn:hover{background:var(--dark)}.btn:disabled{opacity:.6;cursor:wait}
-#status{text-align:center;min-height:22px;margin-top:15px;font-size:13px;color:var(--muted)}.result{margin-top:20px;border:1px solid #cfe3d2;border-radius:12px;overflow:hidden}.result-head{padding:14px 17px;background:#eaf5ed;color:#17613a;font-weight:800;font-size:14px}.result-head.revoked{background:#fff0ed;color:#a12b20}.result-body{padding:8px 19px}.detail{padding:12px 0;border-bottom:1px solid #edf0ed}.detail:last-child{border:0}.detail-label{display:block;color:var(--muted);font-size:10px;font-weight:800;margin-bottom:3px;text-transform:uppercase;letter-spacing:.8px}.detail-value{font-size:14px;font-weight:700;color:var(--dark);overflow-wrap:anywhere}.hidden{display:none!important}.privacy{margin:18px auto 0;padding:14px 17px;background:#f5f8f4;border:1px solid var(--border);border-radius:10px;color:#566057;font-size:12px}
+#status{text-align:center;min-height:22px;margin-top:15px;font-size:13px;color:var(--muted)}.result{margin-top:20px;border:1px solid #cfe3d2;border-radius:12px;overflow:hidden}.result-head{padding:14px 17px;background:#eaf5ed;color:#17613a;font-weight:800;font-size:14px}.result-head.revoked{background:#fff0ed;color:#a12b20}.result-body{padding:8px 19px}.detail{padding:12px 0;border-bottom:1px solid #edf0ed}.detail:last-child{border:0}.detail-label{display:block;color:var(--muted);font-size:10px;font-weight:800;margin-bottom:3px;text-transform:uppercase;letter-spacing:.8px}.detail-value{font-size:14px;font-weight:700;color:var(--dark);overflow-wrap:anywhere}.hidden{display:none!important}
 .footer{background:#bfd6c5;padding:28px 20px 18px;text-align:center}.footer p{font-size:11px;color:#37483b;margin:0}.footer a{color:#173b26;font-weight:700}
 @media(max-width:600px){.hero-inner{padding:54px 20px 70px}.input-row{flex-direction:column}.btn{width:100%}.nav{padding:10px 16px}}
 </style>
 </head>
 <body>
-<header class="site-header"><div class="nav"><a class="brand" href="https://tbarc.in">TBARC INDIA<small>VERIFICATION PORTAL</small></a><a class="admin" href="admin/">ADMIN LOGIN</a></div></header>
-<section class="hero"><div class="hero-inner"><span class="kicker">Official TBARC Verification Portal</span><h1>Certificate &amp; <span>Document Verification</span></h1><p>Verify certificates and official documents issued by the Tropical Biodiversity Action and Research Centre (TBARC).</p></div></section>
+<header class="site-header"><div class="nav"><a class="brand" href="https://tbarc.in"><img src="images/logo.png" alt="TBARC logo"><span>TBARC INDIA<small>VERIFICATION PORTAL</small></span></a><a class="admin" href="admin/">ADMIN LOGIN</a></div></header>
+<section class="hero"><div class="hero-inner"><span class="kicker">Official TBARC Verification Portal</span><h1>Document <span>Verification</span></h1><p>Verify documents issued by the Tropical Biodiversity Action and Research Centre (TBARC).</p></div></section>
 <main><section class="wrap"><div class="card">
-<div class="heading"><div class="icon">✓</div><h2>Verify a Record</h2><p>Enter the reference number exactly as printed on the certificate or document.</p></div>
-<div class="tabs" role="tablist"><button class="tab active" id="certTab" type="button">Certificate</button><button class="tab" id="docTab" type="button">Official Document</button></div>
-<form id="verifyForm"><label id="numberLabel" for="recordNumber">Certificate Number</label><div class="input-row"><input id="recordNumber" type="text" placeholder="e.g. TBARC-MEM-001" autocomplete="off" required><button class="btn" id="verifyBtn" type="submit">Verify Record</button></div></form>
+<div class="heading"><div class="icon" aria-hidden="true"><svg viewBox="0 0 48 48" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 7.5h14l8 8V39a2.5 2.5 0 0 1-2.5 2.5h-19A2.5 2.5 0 0 1 12 39V10a2.5 2.5 0 0 1 2-2.5Z" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M27.5 8v9h8M18 24h12M18 30h8" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><circle cx="33.5" cy="34" r="7" fill="var(--light)" stroke="currentColor" stroke-width="2.6"/><path d="m38.5 39 4 4" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></div><h2>Verify a Record</h2><p>Enter the reference number exactly as printed on the document.</p></div>
+<form id="verifyForm"><label id="numberLabel" for="recordNumber">Document Number</label><div class="input-row"><input id="recordNumber" type="text" placeholder="e.g. TBARC-DOC-2026-001" autocomplete="off" required><button class="btn" id="verifyBtn" type="submit">Verify Record</button></div></form>
 <div id="status" role="status" aria-live="polite"></div>
 <div id="result" class="result hidden"><div id="resultHead" class="result-head">✓ Verified Record</div><div class="result-body">
-<div class="detail"><span class="detail-label" id="outNumberLabel">Certificate Number</span><span class="detail-value" id="outNumber"></span></div>
+<div class="detail"><span class="detail-label" id="outNumberLabel">Document Number</span><span class="detail-value" id="outNumber"></span></div>
 <div class="detail"><span class="detail-label">Name / Title</span><span class="detail-value" id="outName"></span></div>
 <div class="detail"><span class="detail-label">Affiliation / Issuing Authority</span><span class="detail-value" id="outAffiliation"></span></div>
 <div class="detail"><span class="detail-label">Subject / Description</span><span class="detail-value" id="outSubject"></span></div>
 <div class="detail"><span class="detail-label">Issue Date</span><span class="detail-value" id="outDate"></span></div>
 </div></div>
-<div class="privacy">🔒 <strong>Privacy notice:</strong> Only the limited details needed to verify an official TBARC record are displayed. Public visitors do not need to create an account or log in.</div>
+
 </div></section></main>
 <footer class="footer"><p>© 2026 Tropical Biodiversity Action and Research Centre. All rights reserved. · <a href="https://tbarc.in">tbarc.in</a></p></footer>
 <script type="module">
@@ -46,20 +45,21 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebas
 import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 import { firebaseConfig } from "./firebase-config.js";
 const app=initializeApp(firebaseConfig), db=getFirestore(app);
-let kind="certificates";
+
 const form=document.getElementById("verifyForm"), input=document.getElementById("recordNumber"), statusBox=document.getElementById("status"), result=document.getElementById("result"), button=document.getElementById("verifyBtn");
-function setKind(next){kind=next;document.getElementById("certTab").classList.toggle("active",next==="certificates");document.getElementById("docTab").classList.toggle("active",next==="documents");document.getElementById("numberLabel").textContent=next==="certificates"?"Certificate Number":"Document Number";document.getElementById("outNumberLabel").textContent=next==="certificates"?"Certificate Number":"Document Number";input.placeholder=next==="certificates"?"e.g. TBARC-MEM-001":"e.g. TBARC-DOC-2026-001";statusBox.textContent="";result.classList.add("hidden");}
-document.getElementById("certTab").addEventListener("click",()=>setKind("certificates"));
-document.getElementById("docTab").addEventListener("click",()=>setKind("documents"));
+function resetResult(){statusBox.textContent="";result.classList.add("hidden");}
+const numberLabel=document.getElementById("numberLabel");
 const put=(id,value)=>document.getElementById(id).textContent=value||"Not provided";
 form.addEventListener("submit",async e=>{e.preventDefault();const id=input.value.trim().toUpperCase();if(!id)return;result.classList.add("hidden");statusBox.style.color="#52635a";statusBox.textContent="Checking the official TBARC record…";button.disabled=true;button.textContent="Please wait…";
-try{const snap=await getDoc(doc(db,kind,id));if(!snap.exists()){statusBox.style.color="#b42318";statusBox.textContent="No matching record was found. Please check the number and try again.";return;}
+try{let snap=await getDoc(doc(db,"documents",id));
+if(!snap.exists()) snap=await getDoc(doc(db,"certificates",id)); // backward compatibility for older certificate IDs
+if(!snap.exists()){statusBox.style.color="#b42318";statusBox.textContent="No matching record was found. Please check the number and try again.";return;}
 const d=snap.data();const revoked=String(d.status||"valid").toLowerCase()==="revoked";
-put("outNumber",d.certificateNumber||d.documentNumber||id);put("outName",d.name||d.documentTitle);put("outAffiliation",d.affiliation||d.issuingAuthority);put("outSubject",d.subject||d.description);put("outDate",d.issueDate||d.issuedOn);
+put("outNumber",d.documentNumber||d.certificateNumber||id);put("outName",d.name||d.documentTitle);put("outAffiliation",d.affiliation||d.issuingAuthority);put("outSubject",d.subject||d.description);put("outDate",d.issueDate||d.issuedOn);
 const head=document.getElementById("resultHead");head.classList.toggle("revoked",revoked);head.textContent=revoked?"⚠ This record has been revoked":"✓ Verified official TBARC record";result.classList.remove("hidden");statusBox.textContent=revoked?"This record is not currently valid.":"Record found in the official TBARC database.";statusBox.style.color=revoked?"#a12b20":"#17613a";
 }catch(err){console.error(err);statusBox.style.color="#b42318";statusBox.textContent="Unable to verify right now. Please try again later.";}
 finally{button.disabled=false;button.textContent="Verify Record";}
 });
-const params=new URLSearchParams(location.search);if(params.get("id")){input.value=params.get("id");if(params.get("type")==="document")setKind("documents");form.requestSubmit();}
+const params=new URLSearchParams(location.search);if(params.get("id")){input.value=params.get("id");form.requestSubmit();}
 </script>
 </body></html>
