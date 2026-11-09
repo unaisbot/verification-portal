@@ -1,24 +1,23 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TBARC Admin Dashboard</title><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet"><script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TBARC Document Dashboard</title><link rel="icon" type="image/png" href="../images/favicon.png"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet"><script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <style>
-:root{--g:#075333;--d:#043b25;--bg:#f3f6f3;--line:#e2e9e3;--muted:#68756c}*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:"DM Sans",sans-serif;color:#24342a}.top{background:#fff;border-bottom:1px solid var(--line);padding:15px 24px;display:flex;align-items:center;justify-content:space-between}.brand{font:800 17px Manrope;color:var(--g)}.brand small{display:block;font:700 9px "DM Sans";letter-spacing:1.4px;color:#718076}.top button,.btn{border:0;border-radius:7px;padding:10px 14px;background:var(--g);color:#fff;font-weight:800;cursor:pointer}.top button.secondary,.btn.secondary{background:#eaf1eb;color:var(--g)}main{max-width:1180px;margin:28px auto;padding:0 20px}.welcome{display:flex;justify-content:space-between;gap:15px;align-items:end;margin-bottom:22px}.welcome h1{font:800 27px Manrope;color:var(--d);margin:0}.welcome p{margin:4px 0 0;color:var(--muted);font-size:13px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}.stat,.panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}.stat span{font-size:11px;color:var(--muted);font-weight:800;text-transform:uppercase}.stat strong{display:block;font:800 27px Manrope;color:var(--g);margin-top:5px}.layout{display:grid;grid-template-columns:1fr 1fr;gap:16px}.panel h2{font:800 17px Manrope;color:var(--d);margin:0 0 14px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field.full{grid-column:1/-1}label{display:block;font-size:11px;font-weight:800;margin:0 0 5px;color:#45554a}input,select{width:100%;padding:11px;border:1px solid #d8e1da;border-radius:7px;font:13px "DM Sans";background:white}.panel .btn{margin-top:12px}.hint{font-size:11px;color:var(--muted);line-height:1.6}.toolbar{display:flex;gap:9px;align-items:center;margin:18px 0}.toolbar input{max-width:340px}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:9px}table{width:100%;border-collapse:collapse;background:white;min-width:720px}th,td{text-align:left;padding:11px 12px;border-bottom:1px solid #edf1ed;font-size:12px}th{background:#f6f9f6;color:#4d5d52;font-size:10px;text-transform:uppercase;letter-spacing:.5px}td button{border:0;border-radius:5px;padding:6px 8px;margin:2px;background:#eaf1eb;color:var(--g);font-weight:800;cursor:pointer}td button.danger{background:#fff0ed;color:#a12b20}.status{font-size:11px;font-weight:800}.valid{color:#168044}.revoked{color:#b42318}#message{font-size:12px;margin:10px 0;min-height:18px}.modal{position:fixed;inset:0;background:#0b2118a8;display:none;place-items:center;padding:20px;z-index:9}.modal.show{display:grid}.modalbox{background:#fff;padding:24px;border-radius:12px;width:min(100%,420px);text-align:center}.modalbox #qr{display:flex;justify-content:center;margin:15px}.modalbox button{margin:5px}@media(max-width:800px){.layout{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.welcome{align-items:start;flex-direction:column}}@media(max-width:480px){.stats{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.top{padding:12px 15px}}
+:root{--g:#075333;--d:#043b25;--bg:#f3f6f3;--line:#e2e9e3;--muted:#68756c}*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:"DM Sans",sans-serif;color:#24342a}.top{background:#fff;border-bottom:1px solid var(--line);padding:15px 24px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:10px;font:800 17px Manrope;color:var(--g)}.brand img{width:48px;height:48px;object-fit:contain}.brand small{display:block;font:700 9px "DM Sans";letter-spacing:1.4px;color:#718076}.top button,.btn{border:0;border-radius:7px;padding:10px 14px;background:var(--g);color:#fff;font-weight:800;cursor:pointer}.top button.secondary,.btn.secondary{background:#eaf1eb;color:var(--g)}main{max-width:1180px;margin:28px auto;padding:0 20px}.welcome{display:flex;justify-content:space-between;gap:15px;align-items:end;margin-bottom:22px}.welcome h1{font:800 27px Manrope;color:var(--d);margin:0}.welcome p{margin:4px 0 0;color:var(--muted);font-size:13px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}.stat,.panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}.stat span{font-size:11px;color:var(--muted);font-weight:800;text-transform:uppercase}.stat strong{display:block;font:800 27px Manrope;color:var(--g);margin-top:5px}.layout{display:grid;grid-template-columns:1fr 1fr;gap:16px}.panel h2{font:800 17px Manrope;color:var(--d);margin:0 0 14px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field.full{grid-column:1/-1}label{display:block;font-size:11px;font-weight:800;margin:0 0 5px;color:#45554a}input,select{width:100%;padding:11px;border:1px solid #d8e1da;border-radius:7px;font:13px "DM Sans";background:white}.panel .btn{margin-top:12px}.hint{font-size:11px;color:var(--muted);line-height:1.6}.toolbar{display:flex;gap:9px;align-items:center;margin:18px 0}.toolbar input{max-width:340px}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:9px}table{width:100%;border-collapse:collapse;background:white;min-width:720px}th,td{text-align:left;padding:11px 12px;border-bottom:1px solid #edf1ed;font-size:12px}th{background:#f6f9f6;color:#4d5d52;font-size:10px;text-transform:uppercase;letter-spacing:.5px}td button{border:0;border-radius:5px;padding:6px 8px;margin:2px;background:#eaf1eb;color:var(--g);font-weight:800;cursor:pointer}td button.danger{background:#fff0ed;color:#a12b20}.status{font-size:11px;font-weight:800}.valid{color:#168044}.revoked{color:#b42318}#message{font-size:12px;margin:10px 0;min-height:18px}.modal{position:fixed;inset:0;background:#0b2118a8;display:none;place-items:center;padding:20px;z-index:9}.modal.show{display:grid}.modalbox{background:#fff;padding:24px;border-radius:12px;width:min(100%,420px);text-align:center}.modalbox #qr{display:flex;justify-content:center;margin:15px}.modalbox button{margin:5px}@media(max-width:800px){.layout{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.welcome{align-items:start;flex-direction:column}}@media(max-width:480px){.stats{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.top{padding:12px 15px}}
 </style></head><body>
-<header class="top"><div class="brand">TBARC INDIA<small>VERIFICATION ADMIN</small></div><div><a href="../" style="font-size:12px;color:#075333;font-weight:800;margin-right:12px">Public portal</a><button id="logoutBtn" class="secondary">Log out</button></div></header>
-<main><section class="welcome"><div><h1>Verification dashboard</h1><p>Manage TBARC certificates and official documents.</p></div><div class="hint" id="signedIn"></div></section>
-<div class="stats"><div class="stat"><span>Certificates</span><strong id="certCount">—</strong></div><div class="stat"><span>Documents</span><strong id="docCount">—</strong></div><div class="stat"><span>Revoked records</span><strong id="revokedCount">—</strong></div></div>
+<header class="top"><div class="brand"><img src="../images/logo.png" alt="TBARC logo"><span>TBARC INDIA<small>VERIFICATION ADMIN</small></span></div><div><a href="../" style="font-size:12px;color:#075333;font-weight:800;margin-right:12px">Public portal</a><button id="logoutBtn" class="secondary">Log out</button></div></header>
+<main><section class="welcome"><div><h1>Verification dashboard</h1><p>Manage all TBARC documents and verification records.</p></div><div class="hint" id="signedIn"></div></section>
+<div class="stats"><div class="stat"><span>Total documents</span><strong id="docCount">—</strong></div><div class="stat"><span>Valid documents</span><strong id="validCount">—</strong></div><div class="stat"><span>Revoked documents</span><strong id="revokedCount">—</strong></div></div>
 <div class="layout">
-<section class="panel"><h2 id="formTitle">Add a certificate</h2><form id="recordForm"><div class="formgrid">
-<div class="field"><label for="kind">Record type</label><select id="kind"><option value="certificates">Certificate</option><option value="documents">Official document</option></select></div>
-<div class="field"><label for="recordId">Certificate / document number</label><input id="recordId" required placeholder="TBARC-MEM-006"></div>
-<div class="field"><label for="name">Name / document title</label><input id="name" required></div>
+<section class="panel"><h2 id="formTitle">Add a document</h2><form id="recordForm"><div class="formgrid">
+<div class="field"><label for="recordId">Document number</label><input id="recordId" required placeholder="TBARC-MEM-006"></div>
+<div class="field"><label for="name">Document title / name</label><input id="name" required></div>
 <div class="field"><label for="affiliation">Affiliation / issuing authority</label><input id="affiliation"></div>
 <div class="field full"><label for="subject">Subject / description</label><input id="subject"></div>
 <div class="field"><label for="issueDate">Issue date</label><input id="issueDate" type="date"></div>
 <div class="field"><label for="status">Status</label><select id="status"><option value="valid">Valid</option><option value="revoked">Revoked</option></select></div>
 </div><button class="btn" type="submit" id="saveBtn">Save record</button> <button class="btn secondary" type="button" id="clearBtn">Clear</button></form><div id="message" role="status"></div></section>
-<section class="panel"><h2>One-time CSV import</h2><p class="hint">Import the supplied TBARC certificate CSV. Expected columns: Certificate number, Name, Affiliation, subject. Existing records with the same ID will be updated.</p><input id="csvFile" type="file" accept=".csv,text/csv"><button class="btn" id="importBtn" type="button">Import CSV to Firebase</button><p class="hint">Use this once for the initial five records. Do not upload the same file repeatedly unless you intend to update matching records.</p></section>
+<section class="panel"><h2>One-time CSV import</h2><p class="hint">Import TBARC records from a CSV. Expected columns: Certificate number (or Document number), Name, Affiliation, Subject. New imports are saved as documents.</p><input id="csvFile" type="file" accept=".csv,text/csv"><button class="btn" id="importBtn" type="button">Import CSV to Firebase</button><p class="hint">Existing documents with matching numbers will be updated.</p></section>
 </div>
-<section class="panel" style="margin-top:16px"><h2>Records</h2><div class="toolbar"><select id="filterKind" style="max-width:190px"><option value="certificates">Certificates</option><option value="documents">Documents</option></select><input id="search" placeholder="Search by number, name or subject"><button class="btn secondary" id="refreshBtn">Refresh</button></div><div class="tablewrap"><table><thead><tr><th>Number</th><th>Name / title</th><th>Affiliation</th><th>Status</th><th>Actions</th></tr></thead><tbody id="rows"><tr><td colspan="5">Loading records…</td></tr></tbody></table></div></section>
+<section class="panel" style="margin-top:16px"><h2>Records</h2><div class="toolbar"><input id="search" placeholder="Search documents by number, name or subject"><button class="btn secondary" id="refreshBtn">Refresh</button></div><div class="tablewrap"><table><thead><tr><th>Number</th><th>Name / title</th><th>Affiliation</th><th>Status</th><th>Actions</th></tr></thead><tbody id="rows"><tr><td colspan="5">Loading records…</td></tr></tbody></table></div></section>
 </main>
 <div class="modal" id="qrModal"><div class="modalbox"><h2>Verification QR code</h2><div id="qr"></div><p class="hint" id="qrCaption"></p><button class="btn" id="closeQr">Close</button></div></div>
 <script type="module">
@@ -27,20 +26,86 @@ import{getAuth,onAuthStateChanged,signOut}from"https://www.gstatic.com/firebasej
 import{getFirestore,doc,getDoc,collection,getDocs,setDoc,deleteDoc}from"https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 import{firebaseConfig}from"../firebase-config.js";
 const app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app);
-const $=id=>document.getElementById(id);let currentUser=null,cache={certificates:[],documents:[]},editing=null;
+const $=id=>document.getElementById(id);let cache=[],editing=null;
 function message(t,good=false){$("message").textContent=t;$("message").style.color=good?"#168044":"#b42318";}
-function clearForm(){editing=null;$("recordForm").reset();$("formTitle").textContent="Add a certificate";$("saveBtn").textContent="Save record";}
-function dataFromForm(){const kind=$("kind").value,id=$("recordId").value.trim().toUpperCase();return{kind,id,data:{[kind==="certificates"?"certificateNumber":"documentNumber"]:id,name:$("name").value.trim(),affiliation:$("affiliation").value.trim(),subject:$("subject").value.trim(),issueDate:$("issueDate").value,status:$("status").value,updatedAt:new Date().toISOString()}};}
-async function loadAll(){for(const k of ["certificates","documents"]){const snap=await getDocs(collection(db,k));cache[k]=snap.docs.map(x=>({id:x.id,...x.data()}));}render();$("certCount").textContent=cache.certificates.length;$("docCount").textContent=cache.documents.length;$("revokedCount").textContent=[...cache.certificates,...cache.documents].filter(x=>x.status==="revoked").length;}
-function render(){const k=$("filterKind").value,q=$("search").value.toLowerCase();const list=cache[k].filter(x=>[x.id,x.name,x.affiliation,x.subject].join(" ").toLowerCase().includes(q));$("rows").innerHTML="";if(!list.length){$("rows").innerHTML='<tr><td colspan="5">No records found.</td></tr>';return;}for(const r of list){const tr=document.createElement("tr");const cells=[r.id,r.name||r.documentTitle||"",r.affiliation||r.issuingAuthority||""];cells.forEach(v=>{const td=document.createElement("td");td.textContent=v;tr.appendChild(td);});const st=document.createElement("td");st.innerHTML=`<span class="status ${r.status==="revoked"?"revoked":"valid"}">${r.status==="revoked"?"REVOKED":"VALID"}</span>`;tr.appendChild(st);const actions=document.createElement("td");const edit=document.createElement("button");edit.textContent="Edit";edit.onclick=()=>editRecord(k,r);const revoke=document.createElement("button");revoke.textContent=r.status==="revoked"?"Restore":"Revoke";revoke.className=r.status==="revoked"?"":"danger";revoke.onclick=()=>toggleStatus(k,r);const qr=document.createElement("button");qr.textContent="QR";qr.onclick=()=>showQr(k,r.id);actions.append(edit,revoke,qr);tr.appendChild(actions);$("rows").appendChild(tr);}}
-function editRecord(k,r){editing={kind:k,id:r.id};$("kind").value=k;$("recordId").value=r.id;$("recordId").disabled=true;$("name").value=r.name||r.documentTitle||"";$("affiliation").value=r.affiliation||r.issuingAuthority||"";$("subject").value=r.subject||r.description||"";$("issueDate").value=r.issueDate||"";$("status").value=r.status||"valid";$("formTitle").textContent="Edit record";$("saveBtn").textContent="Update record";window.scrollTo({top:0,behavior:"smooth"});}
-$("recordForm").addEventListener("submit",async e=>{e.preventDefault();try{const {kind,id,data}=dataFromForm();if(!id)throw Error("Enter a record number.");await setDoc(doc(db,kind,id),data,{merge:true});message(editing?"Record updated.":"Record saved.",true);$("recordId").disabled=false;clearForm();await loadAll();}catch(e){message(e.message||"Unable to save record.");}});
-$("clearBtn").onclick=()=>{$("recordId").disabled=false;clearForm();message("");};
-async function toggleStatus(k,r){if(!confirm((r.status==="revoked"?"Restore":"Revoke")+" "+r.id+"?"))return;await setDoc(doc(db,k,r.id),{status:r.status==="revoked"?"valid":"revoked",updatedAt:new Date().toISOString()},{merge:true});await loadAll();}
-$("filterKind").onchange=render;$("search").oninput=render;$("refreshBtn").onclick=()=>loadAll().catch(e=>message(e.message));
+function clearForm(){editing=null;$("recordForm").reset();$("recordId").disabled=false;$("formTitle").textContent="Add a document";$("saveBtn").textContent="Save document";}
+function dataFromForm(){const id=$("recordId").value.trim().toUpperCase();return{id,data:{documentNumber:id,name:$("name").value.trim(),affiliation:$("affiliation").value.trim(),subject:$("subject").value.trim(),issueDate:$("issueDate").value,status:$("status").value,updatedAt:new Date().toISOString()}};}
+async function loadAll(){
+  const [legacy,documents]=await Promise.all([getDocs(collection(db,"certificates")),getDocs(collection(db,"documents"))]);
+  cache=[...legacy.docs.map(x=>({id:x.id,_collection:"certificates",...x.data()})),...documents.docs.map(x=>({id:x.id,_collection:"documents",...x.data()}))];
+  render();
+  $("docCount").textContent=cache.length;
+  $("validCount").textContent=cache.filter(x=>x.status!=="revoked").length;
+  $("revokedCount").textContent=cache.filter(x=>x.status==="revoked").length;
+}
+function render(){
+  const q=$("search").value.toLowerCase();
+  const list=cache.filter(x=>[x.id,x.name,x.documentTitle,x.affiliation,x.issuingAuthority,x.subject,x.description].join(" ").toLowerCase().includes(q));
+  $("rows").innerHTML="";
+  if(!list.length){$("rows").innerHTML='<tr><td colspan="5">No documents found.</td></tr>';return;}
+  for(const r of list){
+    const tr=document.createElement("tr");
+    [r.id,r.name||r.documentTitle||"",r.affiliation||r.issuingAuthority||""].forEach(v=>{const td=document.createElement("td");td.textContent=v;tr.appendChild(td);});
+    const st=document.createElement("td");st.innerHTML=`<span class="status ${r.status==="revoked"?"revoked":"valid"}">${r.status==="revoked"?"REVOKED":"VALID"}</span>`;tr.appendChild(st);
+    const actions=document.createElement("td");
+    const edit=document.createElement("button");edit.textContent="Edit";edit.onclick=()=>editRecord(r);
+    const revoke=document.createElement("button");revoke.textContent=r.status==="revoked"?"Restore":"Revoke";revoke.className=r.status==="revoked"?"":"danger";revoke.onclick=()=>toggleStatus(r);
+    const qr=document.createElement("button");qr.textContent="QR";qr.onclick=()=>showQr(r.id);
+    const del=document.createElement("button");del.textContent="Delete";del.className="danger";del.title="Permanently delete this document";del.onclick=()=>deleteRecord(r);
+    actions.append(edit,revoke,qr,del);tr.appendChild(actions);$("rows").appendChild(tr);
+  }
+}
+function editRecord(r){
+  editing={collection:r._collection,id:r.id};$("recordId").value=r.id;$("recordId").disabled=true;
+  $("name").value=r.name||r.documentTitle||"";$("affiliation").value=r.affiliation||r.issuingAuthority||"";
+  $("subject").value=r.subject||r.description||"";$("issueDate").value=r.issueDate||"";$("status").value=r.status||"valid";
+  $("formTitle").textContent="Edit document";$("saveBtn").textContent="Update document";window.scrollTo({top:0,behavior:"smooth"});
+}
+$("recordForm").addEventListener("submit",async e=>{
+  e.preventDefault();
+  try{
+    const {id,data}=dataFromForm();if(!id)throw Error("Enter a document number.");
+    const target=editing?.collection||"documents";
+    if(editing&&editing.id!==id)throw Error("The document number cannot be changed while editing.");
+    await setDoc(doc(db,target,id),data,{merge:true});
+    message(editing?"Document updated.":"Document saved.",true);clearForm();await loadAll();
+  }catch(e){message(e.message||"Unable to save document.");}
+});
+$("clearBtn").onclick=()=>{clearForm();message("");};
+async function toggleStatus(r){
+  if(!confirm((r.status==="revoked"?"Restore":"Revoke")+" "+r.id+"?"))return;
+  try{await setDoc(doc(db,r._collection,r.id),{status:r.status==="revoked"?"valid":"revoked",updatedAt:new Date().toISOString()},{merge:true});await loadAll();message("Document status updated.",true);}
+  catch(e){message("Unable to update status: "+e.message);}
+}
+async function deleteRecord(r){
+  if(!confirm("Permanently delete document "+r.id+"? This action cannot be undone."))return;
+  try{await deleteDoc(doc(db,r._collection,r.id));if(editing?.id===r.id)clearForm();await loadAll();message("Document deleted successfully.",true);}
+  catch(e){message("Unable to delete document: "+e.message);}
+}
+$("search").oninput=render;$("refreshBtn").onclick=()=>loadAll().catch(e=>message(e.message));
 $("logoutBtn").onclick=async()=>{await signOut(auth);location.href="index.html";};
-$("importBtn").onclick=async()=>{const file=$("csvFile").files[0];if(!file){message("Choose the CSV file first.");return;}try{const parsed=Papa.parse(await file.text(),{header:true,skipEmptyLines:true,transformHeader:h=>h.trim().toLowerCase()});if(parsed.errors.length)throw Error(parsed.errors[0].message);let count=0;for(const row of parsed.data){const id=(row["certificate number"]||row["certificate number "]||"").trim().toUpperCase();if(!id)continue;const payload={certificateNumber:id,name:(row["name"]||"").trim(),affiliation:(row["affiliation"]||"").trim(),subject:(row["subject"]||"").trim(),status:"valid",recordType:"membership"};await setDoc(doc(db,"certificates",id),payload,{merge:true});count++;}message(`Imported ${count} certificate records into Firestore.`,true);await loadAll();}catch(e){message("Import failed: "+e.message);}};
-function showQr(k,id){$("qr").innerHTML="";const type=k==="documents"?"document":"certificate";const url=new URL("../",location.href);url.searchParams.set("type",type);url.searchParams.set("id",id);new QRCode($("qr"),{text:url.toString(),width:190,height:190});$("qrCaption").textContent=url.toString();$("qrModal").classList.add("show");}
+$("importBtn").onclick=async()=>{
+  const file=$("csvFile").files[0];if(!file){message("Choose the CSV file first.");return;}
+  try{
+    const parsed=Papa.parse(await file.text(),{header:true,skipEmptyLines:true,transformHeader:h=>h.trim().toLowerCase()});
+    if(parsed.errors.length)throw Error(parsed.errors[0].message);let count=0;
+    for(const row of parsed.data){
+      const id=(row["document number"]||row["certificate number"]||"").trim().toUpperCase();if(!id)continue;
+      const payload={documentNumber:id,name:(row["name"]||row["document title"]||"").trim(),affiliation:(row["affiliation"]||row["issuing authority"]||"").trim(),subject:(row["subject"]||row["description"]||"").trim(),status:"valid",updatedAt:new Date().toISOString()};
+      await setDoc(doc(db,"documents",id),payload,{merge:true});count++;
+    }
+    message(`Imported ${count} documents into Firebase.`,true);await loadAll();
+  }catch(e){message("Import failed: "+e.message);}
+};
+function showQr(id){
+  $("qr").innerHTML="";const url=new URL("../",location.href);url.searchParams.set("id",id);
+  new QRCode($("qr"),{text:url.toString(),width:190,height:190});$("qrCaption").textContent=url.toString();$("qrModal").classList.add("show");
+}
 $("closeQr").onclick=()=>$("qrModal").classList.remove("show");
-onAuthStateChanged(auth,async user=>{if(!user){location.replace("index.html");return;}currentUser=user;try{const admin=await getDoc(doc(db,"admins",user.uid));if(!admin.exists()||admin.data().role!=="admin"){await signOut(auth);location.replace("index.html");return;}$("signedIn").textContent="Signed in: "+user.email;await loadAll();}catch(e){message("Access check failed: "+e.message);}});
+onAuthStateChanged(auth,async user=>{
+  if(!user){location.replace("index.html");return;}
+  try{const admin=await getDoc(doc(db,"admins",user.uid));if(!admin.exists()||admin.data().role!=="admin"){await signOut(auth);location.replace("index.html");return;}
+    $("signedIn").textContent="Signed in: "+user.email;await loadAll();
+  }catch(e){message("Access check failed: "+e.message);}
+});
 </script></body></html>
