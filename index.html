@@ -31,11 +31,13 @@ label{display:block;font-size:13px;font-weight:800;color:var(--dark);margin-bott
 <form id="verifyForm"><label id="numberLabel" for="recordNumber">Document Number</label><div class="input-row"><input id="recordNumber" type="text" placeholder="e.g. TBARC-DOC-2026-001" autocomplete="off" required><button class="btn" id="verifyBtn" type="submit">Verify Record</button></div></form>
 <div id="status" role="status" aria-live="polite"></div>
 <div id="result" class="result hidden"><div id="resultHead" class="result-head">✓ Verified Record</div><div class="result-body">
-<div class="detail"><span class="detail-label" id="outNumberLabel">Document Number</span><span class="detail-value" id="outNumber"></span></div>
-<div class="detail"><span class="detail-label">Name / Title</span><span class="detail-value" id="outName"></span></div>
-<div class="detail"><span class="detail-label">Affiliation / Issuing Authority</span><span class="detail-value" id="outAffiliation"></span></div>
-<div class="detail"><span class="detail-label">Subject / Description</span><span class="detail-value" id="outSubject"></span></div>
-<div class="detail"><span class="detail-label">Issue Date</span><span class="detail-value" id="outDate"></span></div>
+<div class="detail"><span class="detail-label">Document ID</span><span class="detail-value" id="outNumber"></span></div>
+<div class="detail"><span class="detail-label">Name</span><span class="detail-value" id="outName"></span></div>
+<div class="detail"><span class="detail-label">Designation / Affiliation</span><span class="detail-value" id="outDesignation"></span></div>
+<div class="detail"><span class="detail-label">Subject</span><span class="detail-value" id="outSubject"></span></div>
+<div class="detail"><span class="detail-label">Issued Date</span><span class="detail-value" id="outDate"></span></div>
+<div class="detail"><span class="detail-label">Validity</span><span class="detail-value" id="outValidity"></span></div>
+<div class="detail"><span class="detail-label">Remarks</span><span class="detail-value" id="outRemarks"></span></div>
 </div></div>
 
 </div></section></main>
@@ -55,7 +57,7 @@ try{let snap=await getDoc(doc(db,"documents",id));
 if(!snap.exists()) snap=await getDoc(doc(db,"certificates",id)); // backward compatibility for older certificate IDs
 if(!snap.exists()){statusBox.style.color="#b42318";statusBox.textContent="No matching record was found. Please check the number and try again.";return;}
 const d=snap.data();const revoked=String(d.status||"valid").toLowerCase()==="revoked";
-put("outNumber",d.documentNumber||d.certificateNumber||id);put("outName",d.name||d.documentTitle);put("outAffiliation",d.affiliation||d.issuingAuthority);put("outSubject",d.subject||d.description);put("outDate",d.issueDate||d.issuedOn);
+put("outNumber",d.documentNumber||d.certificateNumber||id);put("outName",d.name||d.documentTitle);put("outDesignation",d.designationAffiliation||d.designation||d.affiliation||d.issuingAuthority);put("outSubject",d.subject||d.description);put("outDate",d.issuedDate||d.issueDate||d.issuedOn);put("outValidity",d.validity);put("outRemarks",d.remarks);
 const head=document.getElementById("resultHead");head.classList.toggle("revoked",revoked);head.textContent=revoked?"⚠ This record has been revoked":"✓ Verified official TBARC record";result.classList.remove("hidden");statusBox.textContent=revoked?"This record is not currently valid.":"Record found in the official TBARC database.";statusBox.style.color=revoked?"#a12b20":"#17613a";
 }catch(err){console.error(err);statusBox.style.color="#b42318";statusBox.textContent="Unable to verify right now. Please try again later.";}
 finally{button.disabled=false;button.textContent="Verify Record";}
